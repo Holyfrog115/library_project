@@ -1,3 +1,6 @@
+/* START of CSS Reset*/
+
+
 /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -54,8 +57,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Page styles start here */
+/* END of CSS Reset */
 
+
+:root {
+    --main-clr: #FFE6A7;
+    --secondary-clr: #F79256;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: url("imgs/background-img.jpg") no-repeat center / cover;
+
+    filter: blur(4px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+
+h1 {
+    padding-inline: 25px;
+    background-color: var(--main-clr);
+}
 
 header {
     display: flex;
@@ -69,8 +94,39 @@ main {
 }
 
 .collection {
+    margin-top: 2rem; 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 300px;
     gap: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: var(--main-clr);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
+}
+
+.book > * {
+    padding-inline: 0.8rem;
+}
+
+.book-name {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    border-bottom: 1px solid black;
+    background-color: var(--secondary-clr);
+    border-radius: 25px 25px 0 0;
+}
+
+.bold {
+    font-weight: bold;
 }
