@@ -67,12 +67,22 @@ function addButton() {
     const addBook = document.querySelector("#addBook");
     const addButton = document.querySelector("#addButton");
 
+    const bookName = document.querySelector("#bookName");
+    const bookAuthor = document.querySelector("#author");
+    const bookYear = document.querySelector("#year");
+    const bookPages = document.querySelector("#pages");
+
     addBook.addEventListener("click", () => {
         dialogForm.showModal();
     })
 
+    dialogForm.addEventListener("close", () => {
+        console.log(dialogForm.returnValue);
+    })
+
     addButton.addEventListener("click", (event) => {
         event.preventDefault();
+        addBookToLibrary(bookName.value, bookPages.value, bookAuthor.value, bookYear.value)
         dialogForm.close();
     })
 }
