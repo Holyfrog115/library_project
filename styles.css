@@ -132,3 +132,30 @@ main {
 .bold {
     font-weight: bold;
 }
+
+#newBookDialog {
+    min-width: 400px;
+}
+
+#newBookDialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#newBookDialog form > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#newBookDialog form > div:first-of-type > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#newBookDialog form > div:last-of-type {
+    display: flex;
+    gap: 15px;
+}
