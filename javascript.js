@@ -20,6 +20,7 @@ function showBooks() {
     // Adds books from list to the page
     
     const collection = document.querySelector(".collection");
+    collection.replaceChildren(); // Deleting all current children elements
 
     for (const item of myLibrary) {
         const bookCard = document.createElement("li");
@@ -82,7 +83,8 @@ function addButton() {
 
     addButton.addEventListener("click", (event) => {
         event.preventDefault();
-        addBookToLibrary(bookName.value, bookPages.value, bookAuthor.value, bookYear.value)
+        addBookToLibrary(bookName.value, bookPages.value, bookAuthor.value, bookYear.value);
+        showBooks();
         dialogForm.close();
     })
 }
