@@ -1,5 +1,6 @@
 const myLibrary = [];
 
+
 function Book(bookName, pages, author, year) {
     this.id = crypto.randomUUID();
     this.bookName = bookName;
@@ -8,10 +9,12 @@ function Book(bookName, pages, author, year) {
     this.year = year;
 }
 
+
 function addBookToLibrary(bookName, pages, author, year) {
     const book = new Book(bookName, pages, author, year); 
     myLibrary.push(book);
 }
+
 
 function showBooks() {
     // Adds books from list to the page
@@ -58,5 +61,29 @@ function showBooks() {
     }
 }
 
+
+function addButton() {
+    const dialogForm = document.querySelector("#newBookDialog")
+    const addBook = document.querySelector("#addBook");
+    const addButton = document.querySelector("#addButton");
+
+    addBook.addEventListener("click", () => {
+        dialogForm.showModal();
+    })
+
+    addButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        dialogForm.close();
+    })
+}
+
 addBookToLibrary("Gibberish", 25, "J.J.Simmons", 2015);
+addBookToLibrary("Hobbit", 310, "J.R.R.Tolkien", 1937);
+addBookToLibrary("1984", 328, "George Orwell", 1949);
+addBookToLibrary("The Great Gatsby", 180, "F. Scott Fitzgerald", 1925);
+addBookToLibrary("Fahrenheit 451", 249, "Ray Bradbury", 1953);
+addBookToLibrary("Dune", 412, "Frank Herbert", 1965);
+addBookToLibrary("To Kill a Mockingbird", 281, "Harper Lee", 1960);
+
+addButton();
 showBooks();
