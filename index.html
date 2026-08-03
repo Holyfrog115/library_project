@@ -12,6 +12,9 @@
         <h1>Library</h1>
     </header>
     <main>
+        <div>
+            <button id="addBook">Add Book</button>
+        </div>
         <ul class="collection">
         </ul>
 
@@ -19,8 +22,17 @@
             <form>
                 <h2>New Book</h2>
                 <div>
-                    <label for="bookName">Enter Book Name: </label>
+                    <label for="bookName">Book Name: </label>
                     <input type="text" name="bookName" id="bookName">
+
+                    <label for="author">Author: </label>
+                    <input type="text" name="bookAuthor" id="author">
+
+                    <label for="year">Release Year: </label>
+                    <input type="text" inputmode="numeric" name="bookYear" id="year" pattern="[0-9]{4}" maxlength="4" required>
+
+                    <label for="pages">Pages: </label>
+                    <input type="text" inputmode="numeric" name="bookPages" id="pages">
                 </div>
                 <div>
                     <button value="cancel" formmethod="dialog">Cancel</button>
@@ -30,10 +42,6 @@
             </form>
 
         </dialog>
-
-        <div>
-            <button id="addBook">Add Book</button>
-        </div>
     </main>
     
 </body>
