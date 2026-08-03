@@ -22,17 +22,25 @@
             <form>
                 <h2>New Book</h2>
                 <div>
-                    <label for="bookName">Book Name: </label>
-                    <input type="text" name="bookName" id="bookName">
+                    <div class="bookName">
+                        <label for="bookName">Book Name: </label>
+                        <input type="text" name="bookName" id="bookName">
+                    </div>
+                    
+                    <div class="bookAuthor">
+                        <label for="author">Author: </label>
+                        <input type="text" name="bookAuthor" id="author">
+                    </div>
 
-                    <label for="author">Author: </label>
-                    <input type="text" name="bookAuthor" id="author">
-
-                    <label for="year">Release Year: </label>
-                    <input type="text" inputmode="numeric" name="bookYear" id="year" pattern="[0-9]{4}" maxlength="4" required>
-
-                    <label for="pages">Pages: </label>
-                    <input type="text" inputmode="numeric" name="bookPages" id="pages">
+                    <div class="bookYear">
+                        <label for="year">Release Year: </label>
+                        <input type="text" inputmode="numeric" name="bookYear" id="year" pattern="[0-9]{4}" maxlength="4">
+                    </div>
+                    
+                    <div class="bookPages">
+                        <label for="pages">Pages: </label>
+                        <input type="text" inputmode="numeric" name="bookPages" id="pages">
+                    </div>
                 </div>
                 <div>
                     <button value="cancel" formmethod="dialog">Cancel</button>
