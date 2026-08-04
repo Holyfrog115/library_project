@@ -57,8 +57,13 @@ function showBooks() {
         pagesText.textContent = "Pages: ";
         bookPages.append(pagesText, item.pages);
 
+        // Delete button
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("delete");
+        deleteButton.textContent = "Delete";
 
-        bookCard.append(bookName, bookAuthor, bookYear, bookPages);
+
+        bookCard.append(bookName, bookAuthor, bookYear, bookPages, deleteButton);
         collection.append(bookCard);
     }
 }
