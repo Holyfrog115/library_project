@@ -76,6 +76,7 @@ function showBooks() {
         const readBtn = document.createElement("button");
         readBtn.classList.add("readBtn");
         readBtn.textContent = "Change Read Status";
+        readButton(readBtn);
 
 
         bookCard.append(bookName, bookAuthor, bookYear, bookPages, readStatus, deleteBtn, readBtn);
@@ -127,6 +128,23 @@ function deleteButton(deleteBtn) {
             if (item.id == targetId) {
                 const index = myLibrary.indexOf(item);
                 myLibrary.splice(index, 1);
+                break;
+            } 
+        }
+
+        showBooks();
+    });
+}
+
+
+function readButton(readBtn) {
+    readBtn.addEventListener("click", (event) => {
+        const targetId = event.target.parentElement.dataset.id;
+
+        for (const item of myLibrary) {
+            if (item.id == targetId) {
+                const index = myLibrary.indexOf(item);
+                myLibrary[index].read = !myLibrary[index].read;
                 break;
             } 
         }
