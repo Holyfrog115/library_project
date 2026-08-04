@@ -1,17 +1,18 @@
 const myLibrary = [];
 
 
-function Book(bookName, pages, author, year) {
+function Book(bookName, pages, author, year, read) {
     this.id = crypto.randomUUID();
     this.bookName = bookName;
     this.pages = pages;
     this.author = author;
     this.year = year;
+    this.read = read;
 }
 
 
-function addBookToLibrary(bookName, pages, author, year) {
-    const book = new Book(bookName, pages, author, year); 
+function addBookToLibrary(bookName, pages, author, year, read) {
+    const book = new Book(bookName, pages, author, year, read); 
     myLibrary.push(book);
 }
 
@@ -57,13 +58,21 @@ function showBooks() {
         pagesText.textContent = "Pages: ";
         bookPages.append(pagesText, item.pages);
 
+        // Book's read status
+        const readStatus = document.createElement("p")
+        readStatus.classList.add("read");
+        const readText = document.createElement("span");
+        readText.classList.add("bold");
+        readText.textContent = "Read: ";
+        readStatus.append(readText, item.read ? "Yes" : "No");
+
         // Delete button
         const deleteBtn = document.createElement("button");
         deleteBtn.classList.add("delete");
         deleteBtn.textContent = "Delete";
         deleteButton(deleteBtn);
 
-        bookCard.append(bookName, bookAuthor, bookYear, bookPages, deleteBtn);
+        bookCard.append(bookName, bookAuthor, bookYear, bookPages, readStatus, deleteBtn);
         collection.append(bookCard);
     }
 }
@@ -120,8 +129,8 @@ function deleteButton(deleteBtn) {
 }
 
 
-addBookToLibrary("Hobbit", 310, "J.R.R.Tolkien", 1937);
-addBookToLibrary("To Kill a Mockingbird", 281, "Harper Lee", 1960);
+addBookToLibrary("Hobbit", 310, "J.R.R.Tolkien", 1937, true);
+addBookToLibrary("To Kill a Mockingbird", 281, "Harper Lee", 1960, false);
 
 addButton();
 showBooks();
