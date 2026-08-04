@@ -25,6 +25,7 @@ function showBooks() {
     for (const item of myLibrary) {
         const bookCard = document.createElement("li");
         bookCard.classList.add("book");
+        bookCard.setAttribute("data-id", item.id);
 
         // Book's name
         const bookName = document.createElement("h3");
