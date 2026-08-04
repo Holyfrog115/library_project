@@ -72,7 +72,13 @@ function showBooks() {
         deleteBtn.textContent = "Delete";
         deleteButton(deleteBtn);
 
-        bookCard.append(bookName, bookAuthor, bookYear, bookPages, readStatus, deleteBtn);
+        // Update read status button
+        const readBtn = document.createElement("button");
+        readBtn.classList.add("readBtn");
+        readBtn.textContent = "Change Read Status";
+
+
+        bookCard.append(bookName, bookAuthor, bookYear, bookPages, readStatus, deleteBtn, readBtn);
         collection.append(bookCard);
     }
 }
