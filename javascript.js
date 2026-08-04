@@ -158,9 +158,5 @@ function readButton(readBtn) {
     });
 }
 
-
-addBookToLibrary("Hobbit", 310, "J.R.R.Tolkien", 1937, true);
-addBookToLibrary("To Kill a Mockingbird", 281, "Harper Lee", 1960, false);
-
 addButton();
 showBooks();
