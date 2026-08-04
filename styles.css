@@ -134,9 +134,18 @@ main {
   padding-inline: 0.8rem;
 }
 
+.book-name, .author {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;     /* Number of lines to show before truncating */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-width: 0;
+}
+
 .book-name {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   font-weight: 600;
   font-size: 1.25rem;
   border-bottom: 1px solid black;
