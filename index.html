@@ -41,6 +41,23 @@
                         <label for="pages">Pages: </label>
                         <input type="number" name="bookPages" id="pages" min="1" max="99999" required>
                     </div>
+
+                    <div class="readStatus">
+                        <fieldset>
+                            <legend>Have you read it?</legend>
+                            <div class="readStatus">
+                                <div>
+                                    <input type="radio" name="readStatus" id="yes">
+                                    <label for="yes">Yes</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="readStatus" id="no" checked>
+                                    <label for="no">No</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        
+                    </div>
                 </div>
                 <div>
                     <button type="button" id="cancelButton" value="cancel" formmethod="dialog" formnovalidate>Cancel</button>
