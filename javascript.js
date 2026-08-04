@@ -58,19 +58,18 @@ function showBooks() {
         bookPages.append(pagesText, item.pages);
 
         // Delete button
-        const deleteButton = document.createElement("button");
-        deleteButton.classList.add("delete");
-        deleteButton.textContent = "Delete";
+        const deleteBtn = document.createElement("button");
+        deleteBtn.classList.add("delete");
+        deleteBtn.textContent = "Delete";
+        deleteButton(deleteBtn);
 
-
-        bookCard.append(bookName, bookAuthor, bookYear, bookPages, deleteButton);
+        bookCard.append(bookName, bookAuthor, bookYear, bookPages, deleteBtn);
         collection.append(bookCard);
     }
 }
 
 
 function addButton() {
-    const body = document.querySelector("body");
     const dialogForm = document.querySelector("#newBookDialog");
     const newBookForm = document.querySelector("#newBookForm");
     const addBook = document.querySelector("#addBook");
@@ -91,17 +90,35 @@ function addButton() {
         showBooks();
         dialogForm.close();
         newBookForm.reset();
-    })
+    });
 
     dialogForm.addEventListener("close", (event) => {
         newBookForm.reset();
-    })
+    });
 
     cancelButton.addEventListener("click", (event) => {
         event.preventDefault();
         dialogForm.close();
-    })
+    });
 }
+
+
+function deleteButton(deleteBtn) {
+    deleteBtn.addEventListener("click", (event) => {
+        const targetId = event.target.parentElement.dataset.id;
+
+        for (const item of myLibrary) {
+            if (item.id == targetId) {
+                const index = myLibrary.indexOf(item);
+                myLibrary.splice(index, 1);
+                break;
+            } 
+        }
+
+        showBooks();
+    });
+}
+
 
 addBookToLibrary("Hobbit", 310, "J.R.R.Tolkien", 1937);
 addBookToLibrary("To Kill a Mockingbird", 281, "Harper Lee", 1960);
