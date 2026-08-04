@@ -182,3 +182,19 @@ main {
   display: flex;
   gap: 15px;
 }
+
+fieldset {
+  border: none;
+  padding: 0;
+  display: flex;
+}
+
+legend {
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.readStatus {
+  display: flex;
+  gap: 25px;
+}
