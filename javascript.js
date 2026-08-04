@@ -64,37 +64,35 @@ function showBooks() {
 
 
 function addButton() {
-    const dialogForm = document.querySelector("#newBookDialog")
+    const dialogForm = document.querySelector("#newBookDialog");
+    const newBookForm = document.querySelector("#newBookForm");
     const addBook = document.querySelector("#addBook");
-    const addButton = document.querySelector("#addButton");
+    const cancelButton = document.querySelector("#cancelButton");
 
     const bookName = document.querySelector("#bookName");
     const bookAuthor = document.querySelector("#author");
     const bookYear = document.querySelector("#year");
     const bookPages = document.querySelector("#pages");
 
-    addBook.addEventListener("click", () => {
+    addBook.addEventListener("click", (event) => {
         dialogForm.showModal();
     })
 
-    dialogForm.addEventListener("close", () => {
-        console.log(dialogForm.returnValue);
-    })
-
-    addButton.addEventListener("click", (event) => {
+    newBookForm.addEventListener("submit", (event) => {
         event.preventDefault();
         addBookToLibrary(bookName.value, bookPages.value, bookAuthor.value, bookYear.value);
         showBooks();
         dialogForm.close();
+        newBookForm.reset();
+    })
+
+    cancelButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        dialogForm.close();
     })
 }
 
-addBookToLibrary("Gibberish", 25, "J.J.Simmons", 2015);
 addBookToLibrary("Hobbit", 310, "J.R.R.Tolkien", 1937);
-addBookToLibrary("1984", 328, "George Orwell", 1949);
-addBookToLibrary("The Great Gatsby", 180, "F. Scott Fitzgerald", 1925);
-addBookToLibrary("Fahrenheit 451", 249, "Ray Bradbury", 1953);
-addBookToLibrary("Dune", 412, "Frank Herbert", 1965);
 addBookToLibrary("To Kill a Mockingbird", 281, "Harper Lee", 1960);
 
 addButton();
