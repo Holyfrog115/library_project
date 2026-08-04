@@ -43,7 +43,7 @@ function showBooks() {
         // Book's year
         const bookYear = document.createElement("time");
         bookYear.classList.add("year");
-        bookYear.setAttribute("datetime", toString(item.year));
+        bookYear.setAttribute("datetime", item.year);
         const yearText = document.createElement("span");
         yearText.classList.add("bold");
         yearText.textContent = "Year: ";
