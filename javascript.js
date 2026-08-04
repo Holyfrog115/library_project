@@ -88,6 +88,7 @@ function addButton() {
     const bookAuthor = document.querySelector("#author");
     const bookYear = document.querySelector("#year");
     const bookPages = document.querySelector("#pages");
+    const readStatus = document.querySelector("#no")
 
     addBook.addEventListener("click", (event) => {
         dialogForm.showModal();
@@ -95,7 +96,7 @@ function addButton() {
 
     newBookForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        addBookToLibrary(bookName.value, bookPages.value, bookAuthor.value, bookYear.value);
+        addBookToLibrary(bookName.value, bookPages.value, bookAuthor.value, bookYear.value, readStatus.checked ? false : true);
         showBooks();
         dialogForm.close();
         newBookForm.reset();
