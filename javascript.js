@@ -64,6 +64,7 @@ function showBooks() {
 
 
 function addButton() {
+    const body = document.querySelector("body");
     const dialogForm = document.querySelector("#newBookDialog");
     const newBookForm = document.querySelector("#newBookForm");
     const addBook = document.querySelector("#addBook");
@@ -83,6 +84,10 @@ function addButton() {
         addBookToLibrary(bookName.value, bookPages.value, bookAuthor.value, bookYear.value);
         showBooks();
         dialogForm.close();
+        newBookForm.reset();
+    })
+
+    dialogForm.addEventListener("close", (event) => {
         newBookForm.reset();
     })
 
