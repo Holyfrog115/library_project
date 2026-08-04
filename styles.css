@@ -76,6 +76,7 @@ input[type="number"] {
 :root {
   --main-clr: #FFE6A7;
   --secondary-clr: #F79256;
+  --secondary-clr-hover: #db804b;
   --obscure-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.5);
 }
 
@@ -149,6 +150,10 @@ main {
 .delete {
   align-self: center;
   background-color: var(--secondary-clr);
+}
+
+.delete:hover {
+  background-color: var(--secondary-clr-hover);
 }
 
 #newBookDialog {
